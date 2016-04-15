@@ -831,6 +831,12 @@ msg_types = {
                                               '_remaining',
                                               '30s',
                                               ['extension']),
+    (CLASS_SEC, MSG_SEC_SIGN): UBloxDescriptor('SEC_SIGN',  # Supported in versions 18 to 22
+                                               '<B 3B BBH 32B',
+                                               ['version', 'reserved1', 'classID', 'messageID', 'checksum', 'hash']),
+    (CLASS_SEC, MSG_SEC_UNIQID): UBloxDescriptor('SEC_UNIQID',
+                                                 '<B 3B 5B',
+                                                 ['version', 'reserved1', 'uniqueId']),
     (CLASS_TIM, MSG_TIM_TP): UBloxDescriptor('TIM_TP',
                                              '<IIiHBB',
                                              ['towMS', 'towSubMS', 'qErr', 'week', 'flags', 'reserved1']),
