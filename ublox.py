@@ -197,7 +197,7 @@ MSG_TIM_TOS = 0x12
 MSG_TIM_VCOCAL = 0x15
 
 # UPD messages
-MSG_UDP_SOS = 0x14
+MSG_UPD_SOS = 0x14
 
 # port IDs
 PORT_DDC = 0
@@ -792,7 +792,7 @@ msg_types = {
                                                 'reserved3']),
     (CLASS_RXM, MSG_RXM_SFRB): UBloxDescriptor('RXM_SFRB',  # Supported in versions 18 to 22
                                                '<BBBBBBBB',
-                                               ['gnssId', 'svId', 'reserved','freqId', 'numWords', 'chn', 'version',
+                                               ['gnssId', 'svId', 'reserved', 'freqId', 'numWords', 'chn', 'version',
                                                 'reserved2'],
                                                'numWords',
                                                'I',
@@ -875,6 +875,9 @@ msg_types = {
     (CLASS_TIM, MSG_TIM_VRFY): UBloxDescriptor('TIM_VRFY',
                                                '<iiiiHBB',
                                                ['itow', 'frac', 'deltaMs', 'deltaNs', 'wno', 'flags', 'reserved1']),
+    (CLASS_UPD, MSG_UPD_SOS): UBloxDescriptor('UPD_SOS',
+                                              '<B 3B B 3B'
+                                              ['cmd', 'reserved1', 'response', 'reserved2']),
 }
 
 
