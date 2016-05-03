@@ -548,7 +548,7 @@ msg_types = {
                                                  ['timeMode', 'reserved1', 'flags', 'ecefXOrLat', 'ecefYOrLon',
                                                   'ecefZOrAlt', 'fixedPosAcc', 'svinMinDur', 'svinAccLimit']),
     (CLASS_CFG, MSG_CFG_TP5): UBloxDescriptor('CFG_TP5',  # Protocol version 16 to 22
-                                              '<BB 2B hhIIIIiI',
+                                              '<BBHhhIIIIiI',
                                               ['tpIdx', 'version', 'reserved1', 'antCableDelay', 'rfGroupDelay',
                                                'freqPeriod', 'freqPeriodLock', 'pulseLenRatio', 'pulseLenRatioLock',
                                                'userConfigDelay', 'flags']),
@@ -876,7 +876,7 @@ msg_types = {
                                                '<iiiiHBB',
                                                ['itow', 'frac', 'deltaMs', 'deltaNs', 'wno', 'flags', 'reserved1']),
     (CLASS_UPD, MSG_UPD_SOS): UBloxDescriptor('UPD_SOS',
-                                              '<B 3B B 3B'
+                                              '<B 3B B 3B',
                                               ['cmd', 'reserved1', 'response', 'reserved2']),
 }
 
